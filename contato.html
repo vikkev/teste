@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E63EJM6XVJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E63EJM6XVJ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Métricas GA4 | Contato</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span>📊</span> GA4 Metrics Lab
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="contato.html" class="active">Contato / Lead</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <span class="dot"></span> Teste de Formulário
+      </div>
+      <h1>Contato e Geração de Lead</h1>
+      <p>Envie o formulário abaixo para testar o evento recomendado <code>generate_lead</code> no Google Analytics.</p>
+    </section>
+
+    <div class="card" style="max-width: 600px; margin: 0 auto 2rem auto;">
+      <form id="contactForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="name">Nome Completo</label>
+          <input type="text" id="name" placeholder="Ex: Maria Silva" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="maria@exemplo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="interest">Interesse</label>
+          <input type="text" id="interest" placeholder="Ex: Métricas e Conversões">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Enviar Formulário (Disparar 'generate_lead')
+        </button>
+      </form>
+    </div>
+
+    <!-- Event Console -->
+    <div class="console-card">
+      <div class="console-header">
+        <span>CONSOLE DE EVENTOS EM TEMPO REAL</span>
+        <button onclick="clearLogs()" style="background: none; border: 1px solid #334155; color: #94a3b8; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem;">Limpar</button>
+      </div>
+      <div class="console-logs" id="consoleLogs">
+        <div class="log-entry">
+          <span class="log-time">[Pronto]</span>
+          <span class="log-msg">Página 'Contato' pronta para teste de envio de lead.</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Laboratório de Teste de Métricas • Google Tag: <strong>G-E63EJM6XVJ</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const interest = document.getElementById('interest').value || 'Geral';
+      
+      trackCustomEvent('generate_lead', {
+        lead_source: 'site_contact_form',
+        interest_topic: interest,
+        value: 50.00,
+        currency: 'BRL'
+      });
+
+      alert('Formulário enviado com sucesso! Evento "generate_lead" registrado no GA4.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

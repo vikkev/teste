@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E63EJM6XVJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E63EJM6XVJ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Métricas GA4 | Início</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span>📊</span> GA4 Metrics Lab
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="contato.html">Contato / Lead</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <span class="dot"></span> ID: G-E63EJM6XVJ Ativo
+      </div>
+      <h1>Laboratório de Métricas Google Analytics</h1>
+      <p>Use os botões abaixo e navegue entre as páginas para disparar e monitorar eventos em tempo real no seu relatório do GA4.</p>
+    </section>
+
+    <div class="grid">
+      <!-- Card 1: Pageview & Navigation -->
+      <div class="card">
+        <h3>🧭 Navegação entre Páginas</h3>
+        <p>Alterne entre as páginas para testar <code>page_view</code> e métricas de engajamento de sessão.</p>
+        <div style="display: flex; gap: 0.5rem; flex-direction: column;">
+          <a href="sobre.html" class="btn btn-secondary">Ir para Página Sobre</a>
+          <a href="contato.html" class="btn btn-secondary">Ir para Página de Contato</a>
+        </div>
+      </div>
+
+      <!-- Card 2: CTA & Custom Events -->
+      <div class="card">
+        <h3>⚡ Eventos de Interação</h3>
+        <p>Dispare eventos personalizados de clique, download simulado ou ação de CTA.</p>
+        <div style="display: flex; gap: 0.5rem; flex-direction: column;">
+          <button id="btn-cta" class="btn btn-primary" onclick="trackCustomEvent('click_cta', { cta_name: 'hero_test_button', position: 'main_grid' })">
+            Disparar 'click_cta'
+          </button>
+          <button id="btn-download" class="btn btn-secondary" onclick="trackCustomEvent('file_download', { file_name: 'documento_exemplo.pdf', file_extension: 'pdf' })">
+            Simular 'file_download'
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3: Conversion & Purchase -->
+      <div class="card">
+        <h3>🎯 Conversões & E-commerce</h3>
+        <p>Simule eventos de início de checkout ou conversão final com valores fictícios.</p>
+        <div style="display: flex; gap: 0.5rem; flex-direction: column;">
+          <button id="btn-checkout" class="btn btn-secondary" onclick="trackCustomEvent('begin_checkout', { value: 149.90, currency: 'BRL' })">
+            Simular 'begin_checkout'
+          </button>
+          <button id="btn-purchase" class="btn btn-success" onclick="trackCustomEvent('purchase', { transaction_id: 'T_' + Date.now(), value: 299.00, currency: 'BRL' })">
+            Simular 'purchase' (Conversão)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Console -->
+    <div class="console-card">
+      <div class="console-header">
+        <span>CONSOLE DE EVENTOS EM TEMPO REAL</span>
+        <button onclick="clearLogs()" style="background: none; border: 1px solid #334155; color: #94a3b8; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem;">Limpar</button>
+      </div>
+      <div class="console-logs" id="consoleLogs">
+        <div class="log-entry">
+          <span class="log-time">[Pronto]</span>
+          <span class="log-msg">Tag G-E63EJM6XVJ inicializada. Clique nos botões acima para disparar eventos.</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Laboratório de Teste de Métricas • Google Tag: <strong>G-E63EJM6XVJ</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

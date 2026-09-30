@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E63EJM6XVJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E63EJM6XVJ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Métricas GA4 | Sobre</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <span>📊</span> GA4 Metrics Lab
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html" class="active">Sobre</a></li>
+      <li><a href="contato.html">Contato / Lead</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="badge">
+        <span class="dot"></span> Página Secundária
+      </div>
+      <h1>Sobre o Projeto de Métricas</h1>
+      <p>Esta página serve para testar fluxos de navegação, tempo de permanência e caminhos de usuário no Google Analytics.</p>
+    </section>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h3>📋 Informações da Tag Instalada</h3>
+      <p>A tag global do Google (<code>gtag.js</code>) está configurada com a propriedade <strong>G-E63EJM6XVJ</strong>.</p>
+      <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li>Disparo automático de <code>page_view</code> a cada carregamento de página</li>
+        <li>Rastreamento de métricas aprimoradas (rolagem, cliques de saída, etc., caso ativo no GA)</li>
+        <li>Compatível com DebugView do Google Analytics para validação em tempo real</li>
+      </ul>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" style="width: auto;" onclick="trackCustomEvent('view_about_details', { section: 'project_info' })">
+          Disparar 'view_about_details'
+        </button>
+        <a href="index.html" class="btn btn-secondary" style="width: auto;">Voltar para Início</a>
+      </div>
+    </div>
+
+    <!-- Event Console -->
+    <div class="console-card">
+      <div class="console-header">
+        <span>CONSOLE DE EVENTOS EM TEMPO REAL</span>
+        <button onclick="clearLogs()" style="background: none; border: 1px solid #334155; color: #94a3b8; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem;">Limpar</button>
+      </div>
+      <div class="console-logs" id="consoleLogs">
+        <div class="log-entry">
+          <span class="log-time">[Pronto]</span>
+          <span class="log-msg">Página 'Sobre' carregada com sucesso. Tag G-E63EJM6XVJ ativa.</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Laboratório de Teste de Métricas • Google Tag: <strong>G-E63EJM6XVJ</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
